@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>航拍无人机 - DJI 大疆创新</title>
+  <link rel="stylesheet" href="../../public/css/reset.css">
+  <link rel="stylesheet" href="../../public/css/dji.css">
+  <style>
+    /* 页面特定样式 */
+    .dji-subnav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+      font-size: 14px;
+    }
+    .dji-subnav__links {
+      display: flex;
+      gap: 24px;
+    }
+    .dji-subnav__link {
+      color: #333;
+      text-decoration: none;
+      padding: 18px 0;
+      position: relative;
+    }
+    .dji-subnav__link:hover, .dji-subnav__link--active {
+      color: #000;
+    }
+    .dji-subnav__link--active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+    .dji-subnav__actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .dji-subnav__btn {
+      padding: 6px 16px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .dji-subnav__btn--primary {
+      background-color: #000;
+      color: #fff;
+    }
+    .dji-subnav__btn--secondary {
+      color: #000;
+    }
+
+    .dji-hero--camera-drones {
+      height: 600px;
+      background-image: url('../../public/images/dji/hero-camera-drones.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .dji-hero--camera-drones::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+    }
+    .dji-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .dji-series-section {
+      padding: 60px 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .dji-series-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .dji-series-card:nth-child(even) {
+      direction: rtl; /* 图片在左，文字在右 */
+    }
+    .dji-series-card:nth-child(even) .dji-series-card__content {
+      direction: ltr; /* 文字恢复左对齐 */
+    }
+    .dji-series-card__image {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .dji-series-card__image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .dji-series-card__image:hover img {
+      transform: scale(1.05);
+    }
+    .dji-series-card__content {
+      padding: 20px;
+    }
+    .dji-series-card__tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background-color: #f5f5f5;
+      color: #666;
+      font-size: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .dji-series-card__title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .dji-series-card__slogan {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .dji-series-card__actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    .dji-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+    }
+    .dji-comparison-table th, .dji-comparison-table td {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .dji-comparison-table th {
+      font-weight: normal;
+      color: #666;
+    }
+    .dji-comparison-table img {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+    .dji-comparison-table .product-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .dji-comparison-table .product-price {
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .dji-subnav {
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+      .dji-subnav__links {
+        flex-shrink: 0;
+      }
+      .dji-subnav__actions {
+        display: none;
+      }
+      .dji-series-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+      }
+      .dji-series-card:nth-child(even) {
+        direction: ltr;
+      }
+      .dji-series-card__actions {
+        justify-content: center;
+      }
+      .dji-comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header 将通过 JS 动态插入 -->
+  <div id="header"></div>
+
+  <!-- 主内容区域 -->
+  <main>
+    <!-- 二级导航 -->
+    <nav class="dji-subnav">
+      <div class="dji-subnav__links">
+        <a href="#mavic" class="dji-subnav__link">DJI Mavic</a>
+        <a href="#air" class="dji-subnav__link">DJI Air</a>
+        <a href="#mini" class="dji-subnav__link">DJI Mini</a>
+        <a href="#flip" class="dji-subnav__link">DJI Flip</a>
+        <a href="#neo" class="dji-subnav__link">DJI Neo</a>
+        <a href="#avata" class="dji-subnav__link">DJI Avata</a>
+        <a href="#inspire" class="dji-subnav__link">DJI Inspire</a>
+      </div>
+      <div class="dji-subnav__actions">
+        <a href="#" class="dji-subnav__btn dji-subnav__btn--secondary">帮我选择</a>
+        <a href="#" class="dji-subnav__btn dji-subnav__btn--secondary">对比</a>
+        <a href="#" class="dji-subnav__btn dji-subnav__btn--primary">立即选购</a>
+      </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="dji-hero--camera-drones">
+      <div class="dji-hero__content">
+        <h1 style="font-size: 48px; margin-bottom: 16px;">航拍无人机</h1>
+        <p style="font-size: 20px; opacity: 0.9;">无论是记录日常、体验飞行，还是影视创作、竞速疾驰，总有一款航拍无人机适合您。</p>
+      </div>
+    </section>
+
+    <!-- 产品系列展示 -->
+    <section class="container" style="padding-top: 60px;">
+      <div id="seriesList">
+        <!-- 系列卡片将通过 JS 动态插入 -->
+      </div>
+    </section>
+
+    <!-- 选购指南/Quiz -->
+    <section class="dji-section container" style="text-align: center; background-color: #f9f9f9; border-radius: 16px; padding: 60px 20px;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">不知道哪款无人机最适合您？</h2>
+      <p style="color: #666; margin-bottom: 32px;">做个小测验，我们将根据您的偏好为您推荐最合适的无人机。</p>
+      <a href="#" class="dji-btn dji-btn--black">测一测</a>
+    </section>
+
+    <!-- 热门对比 -->
+    <section class="dji-section container">
+      <h2 class="dji-section__title">热门无人机对比</h2>
+      <div id="comparisonTableWrapper">
+        <!-- 对比表格将通过 JS 动态插入 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer 将通过 JS 动态插入 -->
+  <div id="footer"></div>
+
+  <!-- 脚本 -->
+  <script type="module" src="camera-drones.js"></script>
+</body>
+</html>

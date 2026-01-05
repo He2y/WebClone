@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">产品详情 - DJI 大疆创新</title>
+  <link rel="stylesheet" href="../../public/css/reset.css">
+  <link rel="stylesheet" href="../../public/css/dji.css">
+</head>
+<body>
+  <!-- Header 将通过 JS 动态插入 -->
+  <div id="header"></div>
+
+  <!-- 主内容区域 -->
+  <main style="padding-top: 64px;">
+    <!-- 面包屑导航 -->
+    <div class="container" style="padding: 16px 0;">
+      <a href="../index.html" style="color: #757575;">首页</a>
+      <span style="margin: 0 8px; color: #e0e0e0;">/</span>
+      <span id="breadcrumbProduct" style="color: #000;">产品详情</span>
+    </div>
+
+    <!-- 产品详情 -->
+    <section class="container dji-product-detail">
+      <div id="productDetail">
+        <!-- 产品信息将通过 JS 动态插入 -->
+      </div>
+    </section>
+
+    <!-- 推荐产品 -->
+    <section class="container dji-section">
+      <h2 class="dji-section__title">相关推荐</h2>
+      <div class="dji-product-grid" id="relatedProducts">
+        <!-- 产品卡片将通过 JS 动态插入 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer 将通过 JS 动态插入 -->
+  <div id="footer"></div>
+
+  <!-- 脚本 -->
+  <script type="module" src="product.js"></script>
+</body>
+</html>
+
+
+

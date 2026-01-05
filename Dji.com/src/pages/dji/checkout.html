@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>结算 - DJI 大疆创新</title>
+  <link rel="stylesheet" href="../../public/css/reset.css">
+  <link rel="stylesheet" href="../../public/css/dji.css">
+</head>
+<body>
+  <!-- Header 将通过 JS 动态插入 -->
+  <div id="header"></div>
+
+  <!-- 主内容区域 -->
+  <main style="padding-top: 64px;">
+    <section class="container dji-checkout">
+      <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 24px; text-align: center;">填写订单信息</h1>
+      
+      <!-- 订单汇总 -->
+      <div style="max-width: 800px; margin: 0 auto 32px; padding: 24px; background-color: #f5f5f5; border-radius: 8px;">
+        <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">订单汇总</h2>
+        <div id="orderSummary">
+          <!-- 订单汇总将通过 JS 动态插入 -->
+        </div>
+      </div>
+      
+      <!-- 结算表单 -->
+      <form class="dji-checkout__form" id="checkoutForm">
+        <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 24px;">收货信息</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="dji-checkout__form-group">
+            <label class="dji-checkout__label">收货人姓名 <span style="color: #e31937;">*</span></label>
+            <input 
+              type="text" 
+              class="dji-checkout__input" 
+              name="name"
+              required
+              placeholder="请输入收货人姓名"
+            >
+          </div>
+          
+          <div class="dji-checkout__form-group">
+            <label class="dji-checkout__label">联系电话 <span style="color: #e31937;">*</span></label>
+            <input 
+              type="tel" 
+              class="dji-checkout__input" 
+              name="phone"
+              required
+              placeholder="请输入联系电话"
+            >
+          </div>
+        </div>
+        
+        <div class="dji-checkout__form-group">
+          <label class="dji-checkout__label">收货地址 <span style="color: #e31937;">*</span></label>
+          <input 
+            type="text" 
+            class="dji-checkout__input" 
+            name="address"
+            required
+            placeholder="请输入详细收货地址"
+          >
+        </div>
+        
+        <div class="dji-checkout__form-group">
+          <label class="dji-checkout__label">邮政编码</label>
+          <input 
+            type="text" 
+            class="dji-checkout__input" 
+            name="zipcode"
+            placeholder="请输入邮政编码"
+          >
+        </div>
+        
+        <h2 style="font-size: 20px; font-weight: 600; margin: 32px 0 24px;">支付方式</h2>
+        
+        <div class="dji-checkout__form-group">
+          <label style="display: block; margin-bottom: 16px; cursor: pointer;">
+            <input type="radio" name="payment" value="alipay" checked>
+            <span style="margin-left: 8px;">支付宝</span>
+          </label>
+          <label style="display: block; margin-bottom: 16px; cursor: pointer;">
+            <input type="radio" name="payment" value="wechat">
+            <span style="margin-left: 8px;">微信支付</span>
+          </label>
+          <label style="display: block; margin-bottom: 16px; cursor: pointer;">
+            <input type="radio" name="payment" value="card">
+            <span style="margin-left: 8px;">银行卡支付</span>
+          </label>
+        </div>
+        
+        <div class="dji-checkout__form-group">
+          <label class="dji-checkout__label">订单备注</label>
+          <textarea 
+            class="dji-checkout__input" 
+            name="remark"
+            rows="3"
+            placeholder="选填，可以填写您对订单的特殊要求"
+          ></textarea>
+        </div>
+        
+        <button type="submit" class="dji-checkout__submit-btn" id="submitBtn">
+          提交订单
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer 将通过 JS 动态插入 -->
+  <div id="footer"></div>
+
+  <!-- 脚本 -->
+  <script type="module" src="checkout.js"></script>
+</body>
+</html>
+
+
+

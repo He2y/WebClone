@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品搜索 - DJI 大疆创新</title>
+  <link rel="stylesheet" href="../../public/css/reset.css">
+  <link rel="stylesheet" href="../../public/css/dji.css">
+</head>
+<body>
+  <!-- Header 将通过 JS 动态插入 -->
+  <div id="header"></div>
+
+  <!-- 主内容区域 -->
+  <main style="padding-top: 64px;">
+    <!-- 筛选栏 -->
+    <section class="dji-filter-bar">
+      <div class="container dji-filter-bar__content">
+        <div class="dji-filter-bar__filters">
+          <button class="dji-filter-bar__filter dji-filter-bar__filter--active" data-category="all">全部</button>
+          <button class="dji-filter-bar__filter" data-category="camera-drones">航拍无人机</button>
+          <button class="dji-filter-bar__filter" data-category="handheld">手持摄影设备</button>
+          <button class="dji-filter-bar__filter" data-category="accessories">配件</button>
+        </div>
+        <div class="dji-filter-bar__sort">
+          <select id="sortSelect" style="padding: 8px 16px; border: 1px solid #e0e0e0; border-radius: 4px; background-color: white;">
+            <option value="default">默认排序</option>
+            <option value="price-asc">价格从低到高</option>
+            <option value="price-desc">价格从高到低</option>
+            <option value="name">名称排序</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 搜索框 -->
+    <section class="container dji-search-box">
+      <input 
+        type="text" 
+        class="dji-search-box__input" 
+        placeholder="搜索产品..."
+        id="searchInput"
+      >
+    </section>
+
+    <!-- 搜索结果 -->
+    <section class="container">
+      <div style="margin-bottom: 16px;">
+        <h2 id="resultTitle">全部产品</h2>
+        <p id="resultCount" style="color: #757575;">共 0 件商品</p>
+      </div>
+      <div class="dji-product-grid" id="productsGrid">
+        <!-- 产品卡片将通过 JS 动态插入 -->
+      </div>
+      <div id="noResults" style="text-align: center; padding: 48px; display: none;">
+        <p style="font-size: 48px; margin-bottom: 16px;">🔍</p>
+        <h3 style="font-size: 24px; margin-bottom: 8px;">未找到相关产品</h3>
+        <p style="color: #757575; margin-bottom: 24px;">试试其他关键词</p>
+        <button 
+          id="clearSearchBtn"
+          style="padding: 12px 24px; background-color: #000; color: #fff; border-radius: 4px; cursor: pointer;"
+        >
+          查看全部产品
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer 将通过 JS 动态插入 -->
+  <div id="footer"></div>
+
+  <!-- 脚本 -->
+  <script type="module" src="search.js"></script>
+</body>
+</html>
+
+
+

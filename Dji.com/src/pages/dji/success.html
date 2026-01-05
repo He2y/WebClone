@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>订单成功 - DJI 大疆创新</title>
+  <link rel="stylesheet" href="../../public/css/reset.css">
+  <link rel="stylesheet" href="../../public/css/dji.css">
+</head>
+<body>
+  <!-- Header 将通过 JS 动态插入 -->
+  <div id="header"></div>
+
+  <!-- 主内容区域 -->
+  <main style="padding-top: 64px;">
+    <section class="container dji-success">
+      <p class="dji-success__icon">✓</p>
+      <h1 class="dji-success__title">订单提交成功！</h1>
+      <p class="dji-success__text">感谢您的购买，我们将尽快为您发货</p>
+      
+      <!-- 订单信息 -->
+      <div style="max-width: 600px; margin: 0 auto; padding: 24px; background-color: #f5f5f5; border-radius: 8px;">
+        <div id="orderInfo">
+          <!-- 订单信息将通过 JS 动态插入 -->
+        </div>
+      </div>
+      
+      <!-- 操作按钮 -->
+      <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+        <a href="../index.html" class="dji-success__btn">返回首页</a>
+        <a href="search.html" class="dji-success__btn" style="background-color: #f5f5f5; color: #000;">
+          继续购物
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer 将通过 JS 动态插入 -->
+  <div id="footer"></div>
+
+  <!-- 脚本 -->
+  <script type="module" src="success.js"></script>
+</body>
+</html>
+
+
+
