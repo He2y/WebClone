@@ -14,6 +14,7 @@
     *   **DOM 结构分析**：导航至目标网页（如 `dji.com/cn`），抓取页面快照（Snapshot），分析其 HTML 嵌套层级、CSS 类名命名规范及布局模式（Grid/Flex）。
     *   **交互逻辑推断**：观察滚动交互（如导航栏变色）、鼠标悬停效果（下拉菜单）及响应式断点。
     *   **视觉对齐**：通过视觉检查确保复刻页面与原版在像素级别上的高度一致。
+ *   **参考提示词**：Navigate to <... > using browser mcp. Map core architecture: nav, components, routing, state, styling, interactions. Focus on technical patterns and hierarchy for cloning.
 
 ### 2. 数据与资源采集：Fetch MCP & Node.js
 *   **工具**：`Fetch MCP` 工具与自定义 Node.js 脚本。
